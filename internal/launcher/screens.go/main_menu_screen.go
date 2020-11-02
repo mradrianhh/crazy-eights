@@ -6,7 +6,6 @@ import (
 
 	"github.com/mradrianhh/Navigator/pkg/navigation"
 	"github.com/mradrianhh/Navigator/pkg/navigation/models"
-	"github.com/mradrianhh/crazy-eights/internal/launcher"
 )
 
 // MainMenuScreen ...
@@ -32,10 +31,12 @@ func (mainMenuScreen MainMenuScreen) Show(state *models.State) error {
 	}
 
 	switch response {
-	case 1:
+	case 0:
 		navigation.Clear()
 		os.Exit(0)
 	default:
-		state.State = launcher.MAIN_MENU
+		state.State = "MAIN_MENU"
 	}
+
+	return nil
 }
